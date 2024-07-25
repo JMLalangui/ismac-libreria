@@ -12,5 +12,5 @@ public interface AutorDao {
 	public void up(Autor autor);
 	public void del(Autor autor);
 	//CRUD
- 
+
 }
