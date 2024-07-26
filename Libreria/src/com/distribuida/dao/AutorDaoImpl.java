@@ -49,18 +49,20 @@ public class AutorDaoImpl implements AutorDao {
 	@Transactional
 	public void up(Autor autor) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("UPDATE Autor au SET au.nombre =: kayNombre"
+		Query query = session.createQuery("UPDATE Autor au SET au.nombre =: keyNombre"
 				+", au.apellido =: keyApellido"
 				+", au.pais =: keyPais"
 				+", au.direccion =: keyDireccion"
 				+", au.telefono =: keyTelefono"
 				+", au.correo =: keyCorreo"
-				+"WHERE au.idAutor =: keyIdAutor");
+				+"  WHERE au.idAutor =: keyIdAutor");
 		query.setParameter("keyNombre", autor.getNombre());
+		query.setParameter("keyApellido", autor.getApellido());
 		query.setParameter("keyPais", autor.getPais());
 		query.setParameter("keyDireccion", autor.getDireccion());
 		query.setParameter("keyTelefono", autor.getTelefono());
 		query.setParameter("keyCorreo", autor.getCorreo());
+		query.setParameter("keyIdAutor", autor.getIdAutor());
 		query.executeUpdate();
 
 	}

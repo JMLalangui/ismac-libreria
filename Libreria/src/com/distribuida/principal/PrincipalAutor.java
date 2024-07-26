@@ -22,8 +22,8 @@ public class PrincipalAutor {
 				//autorDao.add(autorADD);
 				
 				//UP
-				//Autor autorUP = new Autor(53,"nutella nutella","peña","ecuador","ascazubi","0987654321","nutella@gmail.com");
-				//autorDao.up(autorUP);
+				Autor autorUP = new Autor(54,"nutella nutella","peña","ecuador","ascazubi","0987654321","nutella@gmail.com");
+				autorDao.up(autorUP);
 				
 				//DELETE
 				//autorDao.del(53);
