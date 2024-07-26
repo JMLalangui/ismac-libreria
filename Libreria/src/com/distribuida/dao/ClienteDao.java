@@ -9,7 +9,7 @@ public interface ClienteDao {
 	public Cliente findOne(int id); //filtrar por cliente
 	public void add(Cliente cliente); //agregar nuevo cliente
 	public void up(Cliente cliente); //actualizar cliente
-	public void del(Cliente cliente); //eliminar un cliente
+	public void del(int id); //eliminar un cliente
 	//CRUD
 	
 	

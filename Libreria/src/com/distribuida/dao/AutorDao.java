@@ -10,7 +10,7 @@ public interface AutorDao {
 	public Autor findOne(int id);
 	public void add(Autor autor);
 	public void up(Autor autor);
-	public void del(Autor autor);
+	public void del(int id);
 	//CRUD
 
 }

@@ -10,7 +10,7 @@ public interface CategoriaDao {
 	public Categoria findOne(int id);
 	public void add(Categoria categoria);
 	public void up(Categoria categoria);
-	public void del(Categoria categoria);
+	public void del(int id);
 	//CRUD
 
 }

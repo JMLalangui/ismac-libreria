@@ -14,8 +14,29 @@ public class PrincipalCategoria {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");  
 		CategoriaDao categoriaDao = context.getBean("categoriaDaoImpl",CategoriaDao.class);
 		
-		List<Categoria> categorias = categoriaDao.findAll();
+		//CRUD
+		//ADD
+		//Categoria categoriaADD = new Categoria(0,"lucerito del alba","ni idea");
+		//categoriaDao.add(categoriaADD);
 		
+		//UP
+		//Categoria categoriaUP = new Categoria(54,"Ciencias sociales","libros ");
+		//categoriaDao.up(categoriaUP);
+		
+		//DELETE
+		//categoriaDao.del(51);
+		//try {
+		//	System.out.println("********************** DELETE************"+categoriaDao.findOne(51));
+		//} catch (Exception e) {
+		//	e.printStackTrace();
+		//}
+		
+		
+		
+		
+		
+		
+		List<Categoria> categorias = categoriaDao.findAll();
 		categorias.forEach(item -> {
 			System.out.println(item.toString());
 		});
