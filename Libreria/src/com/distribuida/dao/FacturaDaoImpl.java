@@ -50,6 +50,7 @@ public class FacturaDaoImpl implements FacturaDao {
 	}
 
 	@Override
+	@Transactional
 	public void del(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(findOne(id));
