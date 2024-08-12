@@ -21,22 +21,22 @@ public class PrincipalFactura {
 		//CRUD
 		
 		//ADD
-		Factura facturaADD = new Factura(0,"FAC-00073",new Date(0),20.36,5.5,26.35,null);
-		facturaADD.setCliente(clienteDao.findOne(3));
+		//Factura facturaADD = new Factura(0,"FAC-00073",new Date(0),20.36,5.5,26.35,null);
+		//facturaADD.setCliente(clienteDao.findOne(3));
 		//facturaDao.add(facturaADD);
 		
 		//UP
-		Factura facturaUP = new Factura(83,"FAC-00070",new Date(0),20.36,5.5,26.35, null);
-		facturaUP.setCliente(clienteDao.findOne(2));
+		//Factura facturaUP = new Factura(83,"FAC-00070",new Date(0),20.36,5.5,26.35, null);
+		//facturaUP.setCliente(clienteDao.findOne(2));
 		//facturaDao.up(facturaUP);
 		
 		//DELETE
-		facturaDao.del(84);
-		try {
-			System.out.println("*********************** DEL ***********************"+facturaDao.findOne(83));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		//facturaDao.del(84);
+		//try {
+		//	System.out.println("*********************** DEL ***********************"+facturaDao.findOne(83));
+		//} catch (Exception e) {
+		//	e.printStackTrace();
+		//}
 		
 		
 		
