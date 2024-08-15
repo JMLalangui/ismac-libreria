@@ -42,7 +42,7 @@ public class Libro {
 	@Column(name = "isbn")
 	private String isbn;
 	@Column(name = "num_ejemplares")
-	private String numEjemplares;
+	private int numEjemplares;
 	@Column(name = "portada")
 	private String portada;
 	@Column(name = "presentacion")
@@ -59,9 +59,10 @@ public class Libro {
 	
 	public Libro () {}
 
+
 	public Libro(int idLibro, String titutlo, String editorial, int numPaginas, String edicion, String idioma,
-			Date fechaPublicacion, String descripcion, String tipoPasta, String isbn, String numEjemplares,
-			String portada, String presentacion, double precio, Autor autor, Categoria categoria) {
+			Date fechaPublicacion, String descripcion, String tipoPasta, String isbn, int numEjemplares,
+			String portada, String presentacion, double precio){//, Autor autor, Categoria categoria) {
 		this.idLibro = idLibro;
 		this.titutlo = titutlo;
 		this.editorial = editorial;
@@ -76,8 +77,8 @@ public class Libro {
 		this.portada = portada;
 		this.presentacion = presentacion;
 		this.precio = precio;
-		this.autor = autor;
-		this.categoria = categoria;
+//		this.autor = autor;
+//		this.categoria = categoria;
 	}
 	
 	
@@ -164,11 +165,11 @@ public class Libro {
 		this.isbn = isbn;
 	}
 
-	public String getNumEjemplares() {
+	public int getNumEjemplares() {
 		return numEjemplares;
 	}
 
-	public void setNumEjemplares(String numEjemplares) {
+	public void setNumEjemplares(int numEjemplares) {
 		this.numEjemplares = numEjemplares;
 	}
 

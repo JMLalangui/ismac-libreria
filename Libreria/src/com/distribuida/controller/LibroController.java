@@ -1,19 +1,16 @@
 package com.distribuida.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.*;
+import org.springframework.web.bind.annotation.*;
 
 import com.distribuida.dao.*;
-import com.distribuida.entities.Cliente;
-import com.distribuida.entities.Libro;
+import com.distribuida.entities.*;
 
 @Controller
 @RequestMapping("/libro")
@@ -54,12 +51,50 @@ public class LibroController {
 					return "libros-del";
 //		} catch (Exception e) {
 //			// TODO: handle exception
-//		}
+//		}		
+				
+	}
+	
+	@PostMapping("/add")
+	public String add(@RequestParam("idLibro") @Nullable Integer idLibro
+			 , @RequestParam(" titutlo") @Nullable String titulo
+			 , @RequestParam(" editorial") @Nullable String editorial
+			 , @RequestParam(" numPaginas") @Nullable Integer numPaginas
+			 , @RequestParam(" edicion") @Nullable String edicion
+			 , @RequestParam(" idioma") @Nullable String idioma
+			 , @RequestParam(" fechaPublicacion") @Nullable Date fechaPublicacion
+			 , @RequestParam(" descripcion") @Nullable String descripcion
+			 , @RequestParam(" tipoPasta") @Nullable String tipoPasta
+			 , @RequestParam(" isbn") @Nullable String isbn
+			 , @RequestParam(" numEjemplares") @Nullable Integer numEjemplares
+			 , @RequestParam(" portada") @Nullable String portada
+			 , @RequestParam(" presentacion") @Nullable String presentacion
+			 , @RequestParam(" precio") @Nullable Double precio
+			 , @RequestParam(" idAutor") @Nullable Integer idAutor
+			 , @RequestParam(" idCategoria") @Nullable Integer idCategoria
+
+			) {
 		
-				
-				
-				
-				
+		if(idLibro ==  null) {
+			Libro libro = new Libro(0, titulo, editorial, numPaginas, edicion, idioma, fechaPublicacion
+					, descripcion, tipoPasta, isbn,numEjemplares, portada, presentacion, precio);
+			libro.setCategoria(categoriaDao.findOne(idCategoria));
+			libro.setAutor(autorDao.findOne(idAutor));
+			libroDao.add(libro);
+		}else {
+			Libro libro = new Libro(idLibro, titulo, editorial, numPaginas, edicion, idioma, fechaPublicacion
+					, descripcion, tipoPasta, isbn,numEjemplares, portada, presentacion, precio);
+			libro.setCategoria(categoriaDao.findOne(idCategoria));
+			libro.setAutor(autorDao.findOne(idAutor));
+			libroDao.up(libro);
+		}
+		return "redirect:/libros/findAll";
+	}
+	
+	@GetMapping("/del")
+	public String del(@RequestParam("idLibro") @Nullable Integer idLibro) {
+		libroDao.del(idLibro);
+		return "redirect:/libros/findAll";
 	}
 
 }
