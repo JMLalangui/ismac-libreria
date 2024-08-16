@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.distribuida.dao.ClienteDao;
 import com.distribuida.entities.Cliente;
 
-import javassist.bytecode.stackmap.BasicBlock.Catch;
 
 @Controller
 @RequestMapping("/cliente") // path principal
